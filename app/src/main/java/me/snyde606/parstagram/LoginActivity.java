@@ -27,6 +27,15 @@ public class LoginActivity extends AppCompatActivity {
         passwordInput = findViewById(R.id.etPassword);
         loginButton = findViewById(R.id.btLogin);
 
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        if (currentUser != null) {
+
+            final Intent intent = new Intent(LoginActivity.this, ComposeActivity.class);
+            startActivity(intent);
+            finish();
+
+        }
+
         loginButton.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -45,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
             public void done(ParseUser user, ParseException e) {
                 if (e == null){
                     Log.d("LogInActivity", "Login successful!");
-                    final Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    final Intent intent = new Intent(LoginActivity.this, ComposeActivity.class);
                     startActivity(intent);
                     finish();
                 }

@@ -7,11 +7,12 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 @ParseClassName("Post")
-public class Post extends ParseObject{
+public class Post extends ParseObject {
 
     private static final String KEY_DESCRIPTION = "description";
     private static final String KEY_IMAGE = "image";
     private static final String KEY_USER = "user";
+    private static final String KEY_CREATEDAT = "createdAt";
 
     public String getDescription(){
         return getString(KEY_DESCRIPTION);
@@ -35,6 +36,10 @@ public class Post extends ParseObject{
 
     public void setUser(ParseUser user){
         put(KEY_USER, user);
+    }
+
+    public String getCreatedAtString(){
+        return getCreatedAt().toString();
     }
 
     public static class Query extends ParseQuery<Post>{

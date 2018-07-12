@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Parstagram</string>
     <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_compose">ComposeActivity</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
 </resources>
