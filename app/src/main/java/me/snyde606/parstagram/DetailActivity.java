@@ -1,14 +1,21 @@
 package me.snyde606.parstagram;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.net.ParseException;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.format.DateUtils;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.parse.ParseUser;
 
 import org.parceler.Parcels;
 
@@ -43,6 +50,33 @@ public class DetailActivity extends AppCompatActivity {
         tvDetailDescription.setText(post.getDescription());
         ivDetailImage.setImageBitmap(BitmapFactory.decodeFile(post.getImageFile().getAbsolutePath()));
         tvTimeAgo.setText(getRelativeTimeAgo(post.getCreatedAt()));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    public void logOut(MenuItem mi){
+        new AlertDialog.Builder(this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle("Log Out")
+                .setMessage("Are you sure you want to log out?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        ParseUser.logOut();
+                        Intent i = new Intent(DetailActivity.this, LoginActivity.class);
+                        startActivity(i);
+                        finish();
+                    }
+
+                })
+                .setNegativeButton("No", null)
+                .show();
     }
 
     public String getRelativeTimeAgo(String rawJsonDate) {
