@@ -58,6 +58,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         holder.tvUsername.setText(post.getUsername());
         holder.tvDescription.setText(post.getDescription());
         holder.tvTimelineTimeAgo.setText(getRelativeTimeAgo(post.getCreatedAt()));
+        holder.tvCommentUser.setText(post.getUsername());
 
         Bitmap takenImage = BitmapFactory.decodeFile(post.getImageFile().getAbsolutePath());
         // RESIZE BITMAP, see section below
@@ -75,6 +76,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         public TextView tvDescription;
         public ImageView ivTimelineImage;
         public TextView tvTimelineTimeAgo;
+        public TextView tvCommentUser;
 //        public ImageView ivFavorite;
         private WeakReference<ClickListener> listenerRef;
 
@@ -86,7 +88,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             tvUsername = (TextView) itemView.findViewById(R.id.tvUsername);
             tvDescription = (TextView) itemView.findViewById(R.id.tvDescription);
             tvTimelineTimeAgo = (TextView) itemView.findViewById(R.id.tvTimelineTimeAgo);
-//            tvTimeAgo = (TextView) itemView.findViewById(R.id.tvTimeAgo);
+            tvCommentUser = (TextView) itemView.findViewById(R.id.tvCommentUser);
 //            ivFavorite = (ImageView) itemView.findViewById(R.id.ivFavorite);
 
             ivTimelineImage.setOnClickListener(this);

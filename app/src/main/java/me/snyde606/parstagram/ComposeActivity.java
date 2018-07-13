@@ -59,8 +59,6 @@ public class ComposeActivity extends AppCompatActivity {
         rvPosts.setLayoutManager(new LinearLayoutManager(this));
         rvPosts.setAdapter(postAdapter);
 
-        populateTimeline();
-
         ivPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,6 +86,9 @@ public class ComposeActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        populateTimeline();
     }
 
     @Override

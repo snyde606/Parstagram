@@ -21,7 +21,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/swipeContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/ivPost"
         android:layout_alignParentTop="true"
         android:layout_marginBottom="5dp">
@@ -29,7 +29,7 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rvPosts"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="8dp" />
 

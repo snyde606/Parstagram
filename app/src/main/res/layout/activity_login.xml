@@ -13,7 +13,8 @@
         android:ems="10"
         android:hint="Username"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_above="@+id/etPassword"
+        android:layout_marginBottom="25dp"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="84dp"
         tools:layout_editor_absoluteY="55dp" />
@@ -24,8 +25,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/etUsername"
-        android:layout_marginTop="35dp"
+        android:layout_above="@+id/btLogin"
+        android:layout_marginBottom="50dp"
         android:hint="Password"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="84dp"
@@ -37,8 +38,8 @@
         android:layout_height="wrap_content"
         android:text="LOGIN"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/etPassword"
-        android:layout_marginTop="60dp"
+        android:layout_above="@+id/btSignUp"
+        android:layout_marginBottom="25dp"
         tools:layout_editor_absoluteX="147dp"
         tools:layout_editor_absoluteY="199dp" />
 
@@ -48,7 +49,28 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="153dp"
+        android:layout_marginBottom="50dp"
         android:text="SIGN UP" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        app:srcCompat="@mipmap/icon" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="121dp"
+        android:fontFamily="cursive"
+        android:text="Parstagram (Original)"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>
