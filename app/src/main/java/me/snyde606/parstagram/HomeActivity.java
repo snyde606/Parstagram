@@ -116,6 +116,7 @@ public class HomeActivity extends AppCompatActivity {
         newPost.setDescription(description);
         newPost.setImage(imageFile);
         newPost.setUser(user);
+        newPost.setLikes(0);
 
         imageFile.saveInBackground(new SaveCallback() {
             @Override

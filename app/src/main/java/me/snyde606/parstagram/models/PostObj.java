@@ -11,9 +11,18 @@ public class PostObj {
     private String username;
     private File imageFile;
     private String createdAt;
+    private int likes;
 
     public PostObj(){
 
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
     }
 
     public String getDescription() {

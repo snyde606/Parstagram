@@ -134,6 +134,7 @@ public class ComposeActivity extends AppCompatActivity {
                         post.setDescription(objects.get(i).getDescription());
                         post.setUsername(objects.get(i).getUser().getUsername());
                         post.setCreatedAt(objects.get(i).getCreatedAtString());
+                        post.setLikes(objects.get(i).getLikes());
                         try {
                             post.setImageFile(objects.get(i).getImage().getFile());
                         } catch (ParseException e1) {
